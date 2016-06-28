@@ -8,6 +8,9 @@ import akka.first.app.mapreduce.messages.WordCount;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * The Reduce actor will go through the list of words and reduce for duplicate words, and accordingly increase the number of instances counted for such words.
+ */
 public class ReduceActor extends UntypedActor {
     @Override
     public void onReceive(Object message) throws Exception {
