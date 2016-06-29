@@ -13,12 +13,18 @@ import akka.routing.RoundRobinRouter;
  * actors, namely the Map actor and Aggregate actor.
  */
 public class MasterActor extends UntypedActor {
+    /*
+     * The router allows us to create a pool of similar actors (called routes), enabling us to spread the load across multiple actors
+     */
     ActorRef mapActor = getContext().actorOf(
             new Props(MapActor.class).withRouter(new
                     RoundRobinRouter(5)), "map");
     ActorRef reduceActor = getContext().actorOf(
             new Props(ReduceActor.class).withRouter(new
                     RoundRobinRouter(5)), "reduce");
+    /*
+     * We skip the router, because the Aggregate actor has states, and having multiple instances of the same actor defeats the purpose.
+     */
     ActorRef aggregateActor = getContext().actorOf(
             new Props(AggregateActor.class), "aggregate");
 
