@@ -1,5 +1,6 @@
 package akka.first.app.typedactors;
 
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.TypedActor;
 import akka.actor.TypedProps;
@@ -42,6 +43,14 @@ public class TypedActorApplication {
         //Method invocation in a blocking way
         Option<Integer> counterResult = calculator.incrementAndReturn();
         System.out.println("counterResult: " + counterResult);
+
+        //Get access to the ActorRef
+        ActorRef calActor = TypedActor.get(_system)
+                .getActorRefFor(calculator);
+        //pass a message
+        calActor.tell("Hi there");
+
+
         TypedActor.get(_system).stop(calculator);
         _system.shutdown();
     }
