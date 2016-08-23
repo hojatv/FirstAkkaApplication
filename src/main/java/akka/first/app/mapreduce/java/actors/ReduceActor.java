@@ -1,4 +1,4 @@
-package akka.first.app.mapreduce.actors;
+package akka.first.app.mapreduce.java.actors;
 
 import akka.actor.UntypedActor;
 import akka.first.app.mapreduce.messages.MapData;

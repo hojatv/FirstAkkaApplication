@@ -5,7 +5,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.dispatch.Await;
 import akka.dispatch.Future;
-import akka.first.app.mapreduce.actors.MasterActor;
+import akka.first.app.mapreduce.java.actors.MasterActor;
 import akka.first.app.mapreduce.messages.Result;
 import akka.pattern.Patterns;
 import akka.util.Duration;

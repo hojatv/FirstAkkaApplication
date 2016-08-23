@@ -1,8 +1,10 @@
-package akka.first.app.mapreduce.actors;
+package akka.first.app.mapreduce.java.actors;
 
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.actor.UntypedActor;
+
+import akka.first.app.mapreduce.actors.*;
 import akka.first.app.mapreduce.messages.MapData;
 import akka.first.app.mapreduce.messages.ReduceData;
 import akka.first.app.mapreduce.messages.Result;
